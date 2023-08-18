@@ -1,13 +1,12 @@
-package com.example.webservice;
+package com.wang.webservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class SpringBootHelloWorldApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
 	}
-
 }
