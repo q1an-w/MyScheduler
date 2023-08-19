@@ -5,12 +5,14 @@ import com.wang.webservice.mongodb.model.Course.*;
 import com.wang.webservice.mongodb.model.Event.*;
 
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 
-@Document(collection = "UserCollection")
+@Document(collection = "SchedulerCollection")
 public class User {
+    @Id
     private ObjectId uniqueID;
     private AccountInfo accountInfo;
     private UserInfo userInfo;

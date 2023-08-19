@@ -27,8 +27,6 @@ public class AccountServices {
 	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
 
-	@Autowired
-	private UserDetailsService jwtInMemoryUserDetailsService;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
@@ -36,10 +34,8 @@ public class AccountServices {
 
 		LoginManager.authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
-		final UserDetails userDetails = jwtInMemoryUserDetailsService
-				.loadUserByUsername(authenticationRequest.getUsername());
 
-		final String token = jwtTokenUtil.generateToken(userDetails);
+		final String token = jwtTokenUtil.generateToken(authenticationRequest.getUsername());
 
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
@@ -47,6 +43,7 @@ public class AccountServices {
 	public ResponseEntity<?> testdb()
 			throws Exception {
 		schedulerRepo.save(new User());
+		System.out.println("test");
 
 
 		return ResponseEntity.ok("testdb add");
