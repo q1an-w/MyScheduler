@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Component
 public class JwtTokenUtil implements Serializable {
@@ -70,8 +72,11 @@ public class JwtTokenUtil implements Serializable {
 		return (!isTokenExpired(token) || ignoreTokenExpiration(token));
 	}
 
-	public Boolean validateToken(String token, UserDetails userDetails) {
+	public Boolean validateToken(String token, String userName, String userEmail) {
 		final String username = getUsernameFromToken(token);
-		return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+		return ((username.equals(userName) || username.equals(userEmail)) && !isTokenExpired(token));
+	}
+	public static String getBearerTokenHeader() {
+		return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getHeader("Authorization");
 	}
 }

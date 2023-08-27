@@ -36,6 +36,13 @@ public class User {
         this.calendar = calendar;
         this.file = file;
     }
+    public void updateUser(User user){
+        this.setAccountInfo(user.getAccountInfo());
+        this.setUserInfo(user.getUserInfo());
+        this.setAcademicInfo(user.getAcademicInfo());
+        this.setCalendar(user.getCalendar());
+        this.setFile(user.getFile());
+    }
 
     public ObjectId getUniqueID() {
         return uniqueID;
