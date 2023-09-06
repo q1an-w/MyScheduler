@@ -36,14 +36,24 @@ public class User {
         this.calendar = calendar;
         this.file = file;
     }
+    public void updateUser(User user){
+        this.setAccountInfo(user.getAccountInfo());
+        this.setUserInfo(user.getUserInfo());
+        this.setAcademicInfo(user.getAcademicInfo());
+        this.setCalendar(user.getCalendar());
+        this.setFile(user.getFile());
+    }
+//    public void addEventToCalendar(Event event){
+//        this.calendar.add(event);
+//    }
 
     public ObjectId getUniqueID() {
         return uniqueID;
     }
 
-    public void setUniqueID(String uniqueID) {
-        this.uniqueID = new ObjectId(uniqueID);
-    }
+//    public void setUniqueID(String uniqueID) {
+//        this.uniqueID = new ObjectId(uniqueID);
+//    }
 
     public AccountInfo getAccountInfo() {
         return accountInfo;
