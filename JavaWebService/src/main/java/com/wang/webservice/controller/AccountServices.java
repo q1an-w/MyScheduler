@@ -113,8 +113,8 @@ public class AccountServices {
 		}else return new ResponseEntity<>("not high enough access level", HttpStatus.BAD_REQUEST);
 	}
 
-	private boolean authenticate(String id, String password) throws Exception{
 
+	private boolean authenticate(String id, String password) throws Exception{
 		Objects.requireNonNull(id);
 		Objects.requireNonNull(password);
 		User user = schedulerRepo.findUserByEmailOrUsername(id);

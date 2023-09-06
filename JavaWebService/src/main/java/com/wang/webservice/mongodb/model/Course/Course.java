@@ -43,9 +43,9 @@ public class Course {
         return courseID;
     }
 
-    public void setCourseID(String courseID) {
-        this.courseID = new ObjectId(courseID);
-    }
+//    public void setCourseID(String courseID) {
+//        this.courseID = new ObjectId(courseID);
+//    }
 
     public String getCourseCode() {
         return courseCode;

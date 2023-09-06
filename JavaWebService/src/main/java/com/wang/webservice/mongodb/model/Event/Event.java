@@ -44,9 +44,9 @@ public class Event {
         return eventID;
     }
 
-    public void setEventID(String eventID) {
-        this.eventID = new ObjectId(eventID);
-    }
+//    public void setEventID(String eventID) {
+//        this.eventID = new ObjectId(eventID);
+//    }
 
     public String getEventTitle() {
         return eventTitle;
