@@ -1,0 +1,76 @@
+home.css
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 90vw;
+    margin: 5%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .main {
+    padding:2%;
+  }
+  
+  .resume {
+    margin-bottom: 20px;
+  }
+  
+  .resume h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .resume p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .resume a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .resume a:hover {
+    text-decoration: underline;
+  }
+  
+  .resume h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .resume ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .resume ul li {
+    margin-bottom: 8px;
+  }
+  .resume-header{
+    text-align: center;
+  }
+  .alternating-block{
+    text-align: center;
+  }
+  /* Alternating text alignment */
+  .alternating-block:nth-child(odd) {
+    margin-right:30%;
+
+  }
+  
+  .alternating-block:nth-child(even) { 
+    margin-left:30%;
+  }
+  
