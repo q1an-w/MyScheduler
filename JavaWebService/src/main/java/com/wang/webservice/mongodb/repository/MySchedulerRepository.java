@@ -12,12 +12,12 @@ public interface MySchedulerRepository extends MongoRepository<User,String> {
     public User findUserByEmailOrUsername(String id);
 
 
-    @Query()
-    public void addEventToCalendar(String userCalendarID, Event event);
-    @Query()
-    public void updateEventToCalendar(String userCalendarID, Event event);
-    @Query()
-    public void deleteEventToCalendar(String userCalendarID, Event event);
+    @Query("{$push: {'calendar': '?0'}}")
+    public void addEventToCalendar(Event event);
+    @Query("{$set: {'calendar': '?1'}}") //TBD
+    public void updateEventToCalendar( Event event);
+    @Query("{$pull: {'calendar': '?0.eventID'}}")//test
+    public void deleteEventToCalendar( Event event);
 
 
 
