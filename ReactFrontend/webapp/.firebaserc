@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "myscheduler-b0fff"
+  },
+  "targets": {
+    "qianyi": {
+      "hosting": {
+        "qianyi": [
+          "qianyi"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
